@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}Your Website{% endblock %}</title>
+</head>
+<body>
+    <header>
+        <h1>{% block header %}Your Website Header{% endblock %}</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'add_session' %}">Add Session</a></li>
+                <li><a href="{% url 'display_timetable' %}">Timetable</a></li>
+                <li><a href="{% url 'sessions_list' %}">Session List</a></li>
+                <!-- Add more navigation links as needed -->
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+        <!-- Content from child templates will be placed here -->
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; {% now "Y" %} Your Website</p>
+    </footer>
+</body>
+</html>

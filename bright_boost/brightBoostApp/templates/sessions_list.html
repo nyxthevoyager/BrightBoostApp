@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sessions List</title>
+</head>
+<body>
+    <h1>Sessions List</h1>
+    <table border="2">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Students Attended</th>
+                <th>Questions Answered</th>
+                <th>Subject Area</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for session in sessions %}
+                <tr>
+                    <td>{{ session.date }}</td>
+                    <td>{{ session.students_attended }}</td>
+                    <td>{{ session.questions_answered }}</td>
+                    <td>{{ session.subject_area }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{% url 'display_timetable' %}">Back to Timetable</a>
+</body>
+</html>
