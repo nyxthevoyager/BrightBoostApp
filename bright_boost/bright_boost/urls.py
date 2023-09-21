@@ -23,6 +23,8 @@ Including another URLconf
 # ]
 from django.urls import path, include
 from django.shortcuts import redirect
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     # Include your app's URLs
@@ -31,9 +33,9 @@ urlpatterns = [
     path('add_session/', include('brightBoostApp.urls')), 
     path('timetable/', include('brightBoostApp.urls')),  
      path('sessions_list/', include('brightBoostApp.urls')),
-     
+
       path('home/', include('brightBoostApp.urls')), 
      
     # ... other URL patterns for your project ...
 ]
-
+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

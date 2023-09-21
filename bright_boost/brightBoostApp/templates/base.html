@@ -1,7 +1,15 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
+    <!-- CSS Style -->
+    <style>
+        body{
+background-color: whitesmoke;
+}
+    </style>
 <head>
     <title>{% block title %}Your Website{% endblock %}</title>
+    
 </head>
 <body>
     <header>
@@ -20,10 +28,12 @@
         {% block content %}
         <!-- Content from child templates will be placed here -->
         {% endblock %}
+
     </main>
 
     <footer>
         <p>&copy; {% now "Y" %} Your Website</p>
     </footer>
+
 </body>
 </html>
